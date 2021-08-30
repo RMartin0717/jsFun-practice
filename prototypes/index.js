@@ -113,11 +113,26 @@ const clubPrompts = {
     //   ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const personsClubs = clubs.reduce((acc, club) => {
+      club.members.forEach(member => {
+        if (!acc[member]) {
+          acc[member] = []
+        }
+        acc[member].push(club.club)
+      })
+      return { ...acc }
+    }, {})
+
+    const result = personsClubs;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of club objects which contain nested arrays listing members
+      //create an object and iterate over all members arrays to create keys (if that key doesn't already exist)
+      //for each person, iterate over each club and check to see if they are in that members array. if yes, add that club to their value array
+    //I need to return ONE OBJECT whose keys are the names of the people and whose values are an array of the clubs they are in
   }
 };
 
