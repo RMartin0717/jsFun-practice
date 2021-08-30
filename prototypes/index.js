@@ -25,13 +25,20 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 const kittyPrompts = {
   orangeKittyNames() {
 
+    const orangeKitties = kitties.filter(kitty => kitty.color === 'orange').map(kitty => kitty.name)
+
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = orangeKitties;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    
+    //I am starting with an array of objects containing information about kitties
+      //filter through kitties looking for kitty.color === 'orange'
+      //map over array of kitties and return an array of just their names
+    //I need to return an array of only the names of kitties that are orange
   },
 
   sortByAge() {
