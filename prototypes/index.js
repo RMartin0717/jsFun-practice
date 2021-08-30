@@ -51,11 +51,18 @@ const kittyPrompts = {
     // Write your annotation here as a comment
 
     //I am starting with an array of objects containing kitty data
-      //sort the kitties array using dot notation to access age 
+      //sort the kitties array using dot notation to access age
     //I need to return an array of kitty objects in order of descending age
   },
 
   growUp() {
+    const sortedKitties = kitties.sort((a,b) => b.age - a.age)
+
+    const olderKitties = sortedKitties.map(kitty => {
+      const {age} = kitty
+      const newAge = age + 2
+      return {...kitty, age: newAge}
+    })
     // Return an array of kitties who have all grown up by 2 years e.g.
     // [{
     //   name: 'Felicia',
@@ -69,8 +76,13 @@ const kittyPrompts = {
     // },
     // ...etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = olderKitties;
     return result;
+
+    //I am starting with an array of objects containing kitty data
+      //sort the kitties in descending order
+      //map over the kitties and reassign the age
+    //I need to return an array of kitties sorted in descending order by age who have all aged by 2 years
   }
 };
 
