@@ -34,7 +34,7 @@ const kittyPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
-    
+
     //I am starting with an array of objects containing information about kitties
       //filter through kitties looking for kitty.color === 'orange'
       //map over array of kitties and return an array of just their names
@@ -43,12 +43,16 @@ const kittyPrompts = {
 
   sortByAge() {
     // Sort the kitties by their age
-
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const sortByAge = kitties.sort((a, b) => b.age - a.age)
+    const result = sortByAge;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of objects containing kitty data
+      //sort the kitties array using dot notation to access age 
+    //I need to return an array of kitty objects in order of descending age
   },
 
   growUp() {
