@@ -412,9 +412,16 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
-   
+   const capacities = classrooms.reduce((acc, classroom) => {
+     const capacityKey = `${classroom.program.toLowerCase()}Capacity`
+      if (!acc[capacityKey]) {
+        acc[capacityKey] = 0
+      }
+      acc[capacityKey] = acc[capacityKey] + classroom.capacity
+      return acc
+   }, {})
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = capacities;
     return result;
 
     // Annotation:
