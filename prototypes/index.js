@@ -274,11 +274,21 @@ const cakePrompts = {
     // Return the total amount of cakes in stock e.g.
     // 59
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const total = cakes.reduce((acc, cake) => {
+      return acc + cake.inStock
+    }, 0)
+
+    const result = total;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of cake objects which contain a key, inStock
+      //Since I am iterating over each cake and adding to a running total, I might use reduce
+      //start acc at 0 and add cake.inStock to it
+      //return the acc
+    //I need to return a number for the total amount of cakes in stock
   },
 
   allToppings() {
