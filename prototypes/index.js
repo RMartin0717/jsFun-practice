@@ -389,6 +389,11 @@ const classPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of classroom objects
+      //creat an empty array
+      //forEach classroom, puth it into the new array IF classroom.program === 'FE'
+    //i need to return an array of just the front end classrooms (not an array the same length as the classrooms array i'm starting with)
   },
 
   totalCapacities() {
