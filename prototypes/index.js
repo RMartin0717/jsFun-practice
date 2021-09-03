@@ -332,7 +332,17 @@ const cakePrompts = {
     //    ...etc
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const list = cakes.reduce((acc, cake) => {
+      cake.toppings.forEach(topping => {
+        if (!acc[topping]) {
+          acc[topping] = 0
+        }
+        acc[topping]++
+      })
+      return acc
+    },{})
+
+    const result = list;
     return result;
 
     // Annotation:
@@ -340,8 +350,9 @@ const cakePrompts = {
 
     //I am starting with an array of cake objects
       //since i need to create an object and count, i'll use reduce
-        //for each iteration, if the key does not already exist, create it and start value at 0
-        //now that key definitely exists, add 1 to the value (acc.key++)
+        //for each cake, also iterate over each topping
+          //for each iteration, if the key does not already exist, create it and start value at 0
+          //now that key definitely exists, add 1 to the value (acc.key++)
     //I need to return an OBJECT with keys for each topping with values for the amount of each topping
   }
 };
