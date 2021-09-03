@@ -296,11 +296,29 @@ const cakePrompts = {
     // every cake in the dataset e.g.
     // ['dutch process cocoa', 'toasted sugar', 'smoked sea salt', 'berries', ..etc]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let uniqueToppings = []
+
+    cakes.forEach(cake => {
+      cake.toppings.forEach(topping => {
+        if (!uniqueToppings.includes(topping)) {
+          uniqueToppings.push(topping)
+        }
+      })
+    })
+
+    const result = uniqueToppings;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of cake objects with a key for toppings which is assigned to an array of strings
+      //could use [... new Set(arrayName)], but this is not well optimized since it would create a whole extra dataset
+      //create an empty array
+      //iterate over each cake object (forEach)
+        //for each iteration, iterate over the toppings array
+          //for each iteration over the toppings array, if the currentTopping is not in the new array, push it
+    //I need to return one array of all unique toppings
   },
 
   groceryList() {
