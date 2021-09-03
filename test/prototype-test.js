@@ -227,7 +227,7 @@ describe("PROTOTYPES", () => {
       }])
     });
 
-    it.only("totalCapacities", () => {
+    it("totalCapacities", () => {
       const e = classPrompts.totalCapacities();
 
       expect(e).to.deep.equal({
@@ -236,7 +236,7 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it("sortByCapacity", () => {
+    it.only("sortByCapacity", () => {
       const e = classPrompts.sortByCapacity();
 
       expect(e).to.deep.equal([{

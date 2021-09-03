@@ -414,6 +414,7 @@ const classPrompts = {
 
    const capacities = classrooms.reduce((acc, classroom) => {
      const capacityKey = `${classroom.program.toLowerCase()}Capacity`
+
       if (!acc[capacityKey]) {
         acc[capacityKey] = 0
       }
@@ -443,6 +444,9 @@ const classPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+      //sort by capcity, so need to use dot notation to access this key value
+    //i am starting with an array of classroom objects
+    //I need to return an array of classrooms sorted by capacity, least to greatest (same length as original array)
   }
 };
 
