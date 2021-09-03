@@ -249,11 +249,25 @@ const cakePrompts = {
     // ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const inStock = []
+
+    cakes.forEach(cake => {
+      if (cake.inStock) {
+        inStock.push(cake)
+      }
+    })
+
+    const result = inStock;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of cake objects
+      //not map, because array will not be same length
+      //create an empty array
+      //iterate over cakes array and forEach cake that is in stock, push it into the new array
+    //I need to return an array of only the cakes that are in stock
   },
 
   totalInventory() {
