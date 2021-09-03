@@ -212,11 +212,20 @@ const cakePrompts = {
     //    ..etc
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const cakeStock = cakes.map(cake => {
+      return { flavor: cake.cakeFlavor, inStock: cake.inStock }
+    })
+
+    const result = cakeStock;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of objects each containing cake data with nested arrays for toppings
+      //map over the cakes array and for each iteration, 
+        //return an object with flavor and stock
+    //I need to return an array of objects that include just hte flavor of the cake and how much of that cake is in stock (same number of elements in the array as the original array--map)
   },
 
   onlyInStock() {
