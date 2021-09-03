@@ -337,6 +337,12 @@ const cakePrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of cake objects
+      //since i need to create an object and count, i'll use reduce
+        //for each iteration, if the key does not already exist, create it and start value at 0
+        //now that key definitely exists, add 1 to the value (acc.key++)
+    //I need to return an OBJECT with keys for each topping with values for the amount of each topping
   }
 };
 
