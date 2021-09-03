@@ -164,7 +164,20 @@ const modPrompts = {
     //   { mod: 4, studentsPerInstructor: 8 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    //i'm starting with an array of objects
+      //map over mods array
+      //assign variable for current mod
+      //assign variable for ratio
+      //return object containing these as a key value pair
+    //i need to return an array of objects with the key of mod.mod and value of calculation of mod.students/mod.instructors
+
+    const studentInstructorRatio = mods.map(currentMod => {
+      const mod = currentMod.mod
+      const ratio = currentMod.students / currentMod.instructors
+      return { mod: mod, studentsPerInstructor: ratio }
+    })
+
+    const result = studentInstructorRatio;
     return result;
 
     // Annotation:
