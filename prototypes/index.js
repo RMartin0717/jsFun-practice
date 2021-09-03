@@ -412,11 +412,20 @@ const classPrompts = {
     //   beCapacity: 96
     // }
 
+   
+
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of classroom objects
+      //since i am creating an object and counting, i'll use reduce
+        //i would like to make it dynamic to new programs, so if the program doesn't exist, create the key `${program.toLowerCase}Capacity`
+        //if the key doesn't exist, create it ^ and start the counter at 0
+        //now that the key definitely exists, add classroom.capacity to it
+    //i need to return one object with the keys 'feCapacity' and 'beCapacity' assigned to the total capacity for each program
   },
 
   sortByCapacity() {
