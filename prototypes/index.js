@@ -538,6 +538,11 @@ const weatherPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of objects containing weather data for different cities
+      //map over weather
+      //for each iteration, calculate the average temperature by adding the high and low temp and dividing by 2. return the number
+    //I need to return an array of all the average temperatures (of high and low for each object)
   },
 
   findSunnySpots() {
