@@ -497,7 +497,15 @@ const bookPrompts = {
     //  { title: 'Life of Pi', year: 2001 },
     //  { title: 'The Curious Incident of the Dog in the Night-Time', year: 2003 }]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let newBooks = []
+    books.forEach(book => {
+      if (book.published > 1989) {
+        const bookAndYear = { title: book.title, year: book.published }
+        newBooks = [...newBooks, bookAndYear]
+      }
+    })
+
+    const result = newBooks;
     return result;
 
     // Annotation:
@@ -505,7 +513,7 @@ const bookPrompts = {
 
     //i am starting with an array of book objects
       //create an empty array
-      //forEach book in which book.published > 1989 and book.publish < 2010, create an object containing the title and year published and add it to the array
+      //forEach book in which book.published > 1989, create an object containing the title and year published and add it to the array
     //i need to return an array of book objects containing title and year published that were published in the 90s and 00s
   }
 
