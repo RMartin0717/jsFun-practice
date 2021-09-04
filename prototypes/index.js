@@ -533,7 +533,12 @@ const weatherPrompts = {
     // return an array of all the average temperatures. Eg:
     // [ 40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5 ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const avgTemps = weather.map(dataPoint => {
+      const avg = (dataPoint.temperature.high + dataPoint.temperature.low) / 2
+      return avg
+    })
+
+    const result = avgTemps;
     return result;
 
     // Annotation:
