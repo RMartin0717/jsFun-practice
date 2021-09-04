@@ -562,6 +562,13 @@ const weatherPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of objects containing weather data for different cities
+      //create an array
+      //forEach dataPoint, if the type is 'sunny' or 'mostly sunny', use interpolation to write a sentence describing the weather, including the location (use some dot notation)
+      //add this string to the array
+    //i need to return  an array of sentences of the locations that are sunny and mostly sunny
+
   },
 
   findHighestHumidity() {
