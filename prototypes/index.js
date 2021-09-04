@@ -223,7 +223,7 @@ const cakePrompts = {
     // Write your annotation here as a comment
 
     //I am starting with an array of objects each containing cake data with nested arrays for toppings
-      //map over the cakes array and for each iteration, 
+      //map over the cakes array and for each iteration,
         //return an object with flavor and stock
     //I need to return an array of objects that include just hte flavor of the cake and how much of that cake is in stock (same number of elements in the array as the original array--map)
   },
@@ -470,12 +470,24 @@ const bookPrompts = {
     //   'The Curious Incident of the Dog in the Night - Time', 'The Bell Jar',
     //   'Catch-22', 'Treasure Island']
 
+    let friendlyBooks = []
+    books.forEach(book => {
+      if (!book.genre.includes("Horror") && !book.genre.includes("True Crime")) {
+        friendlyBooks = [...friendlyBooks, book.title]
+      }
+    })
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+
+    const result = friendlyBooks;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of book objects
+      //create an array
+      //for each book, add the title to the array IF the genre is not horror or true crime
+    //I need to return an array of book titles that are not horror or true crime
 
   },
   getNewBooks() {
