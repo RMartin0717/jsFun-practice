@@ -477,7 +477,6 @@ const bookPrompts = {
       }
     })
 
-
     const result = friendlyBooks;
     return result;
 
@@ -503,6 +502,11 @@ const bookPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of book objects
+      //create an empty array
+      //forEach book in which book.published > 1989 and book.publish < 2010, create an object containing the title and year published and add it to the array
+    //i need to return an array of book objects containing title and year published that were published in the 90s and 00s
   }
 
 };
