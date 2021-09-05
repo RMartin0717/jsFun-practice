@@ -6,7 +6,7 @@ Prototype Prompt Sets in Order
 - [x] Cake Prompts
 - [x] Class Prompts
 - [x] Book Prompts
-- [xgi] Weather Prompts
+- [x] Weather Prompts
 - [ ] National Park Prompts
 - [ ] Brewery Prompts
 - [ ] Turing Prompts
