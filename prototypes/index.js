@@ -557,7 +557,15 @@ const weatherPrompts = {
     // 'New Orleans, Louisiana is sunny.',
     // 'Raleigh, North Carolina is mostly sunny.' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let sunnySpots = []
+    weather.forEach(dataPoint => {
+      if (dataPoint.type === 'sunny' || dataPoint.type === 'mostly sunny') {
+        const sentence = `${dataPoint.location} is ${dataPoint.type}.`
+        sunnySpots = [...sunnySpots, sentence]
+      }
+    })
+
+    const result = sunnySpots;
     return result;
 
     // Annotation:
@@ -567,6 +575,8 @@ const weatherPrompts = {
       //create an array
       //forEach dataPoint, if the type is 'sunny' or 'mostly sunny', use interpolation to write a sentence describing the weather, including the location (use some dot notation)
       //add this string to the array
+
+      //could also filter by type and then map over to create strings, but this is not well optimized since it would involve iterating over 2 arrays instead of 1
     //i need to return  an array of sentences of the locations that are sunny and mostly sunny
 
   },
