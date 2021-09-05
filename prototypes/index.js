@@ -596,6 +596,11 @@ const weatherPrompts = {
     // Annotation:
     // Write your annotation here as a comment
 
+    //I am starting with an array of objects containing weather data for different cities
+      //sort the data from highest to lowest humidity
+      //return the datapoint at index 0
+    //I need to return the location with the highest humidity
+
   }
 };
 

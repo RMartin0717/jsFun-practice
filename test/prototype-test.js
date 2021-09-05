@@ -314,13 +314,13 @@ describe("PROTOTYPES", () => {
         40, 40, 44.5, 43.5, 57, 35, 65.5, 62, 14, 46.5
       ])
     }),
-    it.only("findSunnySpots", () => {
+    it("findSunnySpots", () => {
       const e = weatherPrompts.findSunnySpots();
 
       expect(e).to.deep.equal(['Atlanta, Georgia is sunny.', 'New Orleans, Louisiana is sunny.', 'Raleigh, North Carolina is mostly sunny.']
       )
     }),
-    it("findHighestHumidity", () => {
+    it.only("findHighestHumidity", () => {
       const e = weatherPrompts.findHighestHumidity();
 
       expect(e).to.deep.equal({
