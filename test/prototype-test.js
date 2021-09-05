@@ -320,7 +320,7 @@ describe("PROTOTYPES", () => {
       expect(e).to.deep.equal(['Atlanta, Georgia is sunny.', 'New Orleans, Louisiana is sunny.', 'Raleigh, North Carolina is mostly sunny.']
       )
     }),
-    it.only("findHighestHumidity", () => {
+    it("findHighestHumidity", () => {
       const e = weatherPrompts.findHighestHumidity();
 
       expect(e).to.deep.equal({
@@ -333,7 +333,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("National Park Prompts", () => {
-    it("getParkVisitList", () => {
+    it.only("getParkVisitList", () => {
       const e = nationalParksPrompts.getParkVisitList();
 
       expect(e).to.deep.equal({
