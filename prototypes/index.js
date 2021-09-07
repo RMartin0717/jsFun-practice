@@ -656,8 +656,15 @@ const nationalParksPrompts = {
     // { Utah: 'Zion' },
     // { Florida: 'Everglades' } ]
 
+    const statesParks = nationalParks.map(park => {
+      const state = park.location
+      const nationalPark = park.name
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+      return { [state]: nationalPark }
+    })
+
+
+    const result = statesParks;
     return result;
 
     // Annotation:

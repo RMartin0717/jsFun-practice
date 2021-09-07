@@ -341,7 +341,20 @@ describe("PROTOTYPES", () => {
         parksVisited: [ 'Rocky Mountain', 'Acadia', 'Zion' ]
       })
     }),
-    it.only("getParkActivities", () => {
+    it.only("getParkInEachState", () => {
+      const e = nationalParksPrompts.getParkInEachState();
+
+      expect(e).to.deep.equal(
+        [
+          { Colorado: 'Rocky Mountain' },
+          { Wyoming: 'Yellowstone' },
+          { Montana: 'Glacier' },
+          { Maine: 'Acadia' },
+          { Utah: 'Zion' },
+          { Florida: 'Everglades' }
+        ])
+    }),
+    it("getParkActivities", () => {
       const e = nationalParksPrompts.getParkActivities();
 
       expect(e).to.deep.equal(
@@ -358,19 +371,6 @@ describe("PROTOTYPES", () => {
         'backpacking',
         'rock climbing'
       ])
-    }),
-    it("getParkInEachState", () => {
-      const e = nationalParksPrompts.getParkInEachState();
-
-      expect(e).to.deep.equal(
-        [
-          { Colorado: 'Rocky Mountain' },
-          { Wyoming: 'Yellowstone' },
-          { Montana: 'Glacier' },
-          { Maine: 'Acadia' },
-          { Utah: 'Zion' },
-          { Florida: 'Everglades' }
-        ])
     })
   });
 
