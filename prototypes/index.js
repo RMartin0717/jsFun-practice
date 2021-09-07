@@ -768,7 +768,11 @@ const breweryPrompts = {
     // ...etc.
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const breweryBeerCount = breweries.map(brewery => {
+      return { name: brewery.name, beerCount: brewery.beers.length }
+    })
+
+    const result = breweryBeerCount;
     return result;
 
     // Annotation:
