@@ -341,7 +341,7 @@ describe("PROTOTYPES", () => {
         parksVisited: [ 'Rocky Mountain', 'Acadia', 'Zion' ]
       })
     }),
-    it.only("getParkInEachState", () => {
+    it("getParkInEachState", () => {
       const e = nationalParksPrompts.getParkInEachState();
 
       expect(e).to.deep.equal(
@@ -354,7 +354,7 @@ describe("PROTOTYPES", () => {
           { Florida: 'Everglades' }
         ])
     }),
-    it("getParkActivities", () => {
+    it.only("getParkActivities", () => {
       const e = nationalParksPrompts.getParkActivities();
 
       expect(e).to.deep.equal(

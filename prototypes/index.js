@@ -700,6 +700,15 @@ const nationalParksPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of park objects with nested activities arrays
+      //could create an array of all the acitivities arrays and use new Set to remove duplicates, but this creates an additional dataset, so i want a better optimized solution
+
+      //create an array for all the activities
+      //will iterate over each park (forEach) and on each iteration
+        //iterate over each activity (forEach) and if that activity is not in the array, add it
+      //return the activities array
+    //i need to return an array of all activities without duplicates
   }
 };
 
