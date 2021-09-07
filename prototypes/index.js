@@ -944,6 +944,7 @@ const turingPrompts = {
     // Annotation:
     // Write your annotation here as a comment
 
+    //ended up throwing this out in favor of reduce->
     //i am starting with an array of instructor objects AND an array of cohort objects
       //create an empty object
       //for each instructor,
@@ -963,11 +964,31 @@ const turingPrompts = {
     //   recursion: [ 'Pam', 'Leta' ]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const topicInstructors = cohorts.reduce((acc, cohort) => {
+      cohort.curriculum.forEach(topic => {
+        if (!acc[topic]) {
+          const getInstructors = instructors.filter(instructor => {
+            return instructor.teaches.includes(topic)
+          })
+          const instructorNames = getInstructors.map(instructor => {
+            return instructor.name
+          })
+          acc[topic] = instructorNames
+        }
+      })
+      return acc
+    }, {})
+
+    const result = topicInstructors
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of instructor objects AND an array of cohort objects
+      //use reduce to create an object
+      //iterate over cohorts and for each cohort.curriculum, if that topic is not a key, make it one and assign it to an empty array
+    //i need to return an OBJECT where each key is a curriculum topic and each value is an array of instructors who teaches that topic
   }
 };
 
