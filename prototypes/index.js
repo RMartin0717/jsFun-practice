@@ -630,6 +630,14 @@ const nationalParksPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of park objects with nested activities arrays
+      //since i need to create an object and add to the values of its keys as i iterate over nationalParks, I'll use reduce
+      //start with object accumulator
+      //create 2 keys assigned to empty arrays
+      //with each iteration, check whether visited is true or false
+      //use spread operator to add the park.name to the array it belongs in
+    //i need to return an OBJECT containing the names of which parks i need to visit and ones visited already
   },
 
   getParkInEachState() {
