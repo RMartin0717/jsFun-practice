@@ -773,6 +773,11 @@ const breweryPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of brewery objects which have nested arrays of beer objects
+      //map over breweries and on each iteration
+        //create an object with the brewery name and beer count (using brewery.beers.length)
+    //i need to return an array of objects where each object has the name of a brewery and the brewery's beer count
   },
 
   findHighestAbvBeer() {
