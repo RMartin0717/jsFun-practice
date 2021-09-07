@@ -789,7 +789,17 @@ const breweryPrompts = {
     // e.g.
     // { name: 'Barrel Aged Nature\'s Sweater', type: 'Barley Wine', abv: 10.9, ibu: 40 }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let highestAbvBeer = { abv: 0 }
+
+    breweries.forEach(brewery => {
+      brewery.beers.forEach(beer => {
+        if (beer.abv > highestAbvBeer.abv) {
+          highestAbvBeer = beer
+        }
+      })
+    })
+
+    const result = highestAbvBeer;
     return result;
 
     // Annotation:
