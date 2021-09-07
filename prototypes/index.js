@@ -921,11 +921,36 @@ const turingPrompts = {
     //     Will: [1, 2, 3, 4]
     //   }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+
+
+    const instructorModules = instructors.reduce((acc, instructor) => {
+      let modules = []
+
+      instructor.teaches.forEach(topic => {
+        cohorts.forEach(cohort => {
+          if (cohort.curriculum.includes(topic) && !modules.includes(cohort.module)) {
+            modules = [...modules, cohort.module]
+          }
+        })
+      })
+
+      acc[instructor.name] = modules.sort((a,b) => a - b)
+      return acc
+    }, {})
+
+    const result = instructorModules;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of instructor objects AND an array of cohort objects
+      //create an empty object
+      //for each instructor,
+        //iterate over teaches and for each topic, filter cohorts for curriculum includes topic and return the module
+        //chain on a map to return only the module
+        //assign key and value of topics array to object
+    //i need to return an OBJECT where each key is an instructor name and each value is an array of the modules they can teach based on their skills
   },
 
   curriculumPerTeacher() {
