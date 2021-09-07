@@ -8,7 +8,7 @@ Prototype Prompt Sets in Order
 - [x] Book Prompts
 - [x] Weather Prompts
 - [x] National Park Prompts
-- [ ] Brewery Prompts
+- [x] Brewery Prompts
 - [ ] Turing Prompts
 - [ ] Boss Prompts
 - [ ] Ultima Prompts

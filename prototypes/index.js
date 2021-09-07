@@ -854,11 +854,25 @@ const turingPrompts = {
     //  { name: 'Robbie', studentCount: 18 }
     // ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const studentsNumbers = instructors.map(instructor => {
+      const instructorName = instructor.name
+      const findCohort = cohorts.find(cohort => cohort.module === instructor.module)
+      const numStudents = findCohort.studentCount
+      return { name: instructorName, studentCount: numStudents }
+    })
+
+    const result = studentsNumbers
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of instructor objects AND an array of cohort objects
+      //map over instructors array and on each iteration
+        //create variable for instructor name
+        //create variable to access the student count using module information
+        //return object with information
+    //i need to return an array of instructor objects with the instructor name and the count of students in their module
   },
 
   studentsPerInstructor() {
