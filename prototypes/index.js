@@ -858,6 +858,7 @@ const turingPrompts = {
       const instructorName = instructor.name
       const findCohort = cohorts.find(cohort => cohort.module === instructor.module)
       const numStudents = findCohort.studentCount
+
       return { name: instructorName, studentCount: numStudents }
     })
 
@@ -881,12 +882,28 @@ const turingPrompts = {
     // cohort1806: 9,
     // cohort1804: 10.5
     // }
+    const studentsInstructorRatio = cohorts.reduce((acc, cohort) => {
+      const cohortName = `cohort${cohort.cohort}`
+      const numInstructors = instructors.filter(instructor => instructor.module === cohort.module).length
+      const numStudents = cohort.studentCount
+      const ratio = numStudents / numInstructors
+      acc[cohortName] = ratio
+      return acc
+    }, {})
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = studentsInstructorRatio;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of instructor objects AND an array of cohort objects
+      //use reduce to create an object, iterating over cohorts array
+      //for each cohort,
+        //create key of that cohort name
+        //calculate students per teacher
+        //assign key with value to acc
+    //i need to return an OBJECT of how many students per teacher there are in each cohort
   },
 
   modulesPerTeacher() {
