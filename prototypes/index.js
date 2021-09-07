@@ -746,6 +746,11 @@ const breweryPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of brewery objects which have nested arrays of beer objects
+      //i need to add the lengths of each beer array
+      //iterate over each brewery and add the beer array length to a count 
+    //i need to return the total beer count of all bears for every brewery
   },
 
   getBreweryBeerCount() {

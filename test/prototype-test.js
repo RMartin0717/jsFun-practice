@@ -354,7 +354,7 @@ describe("PROTOTYPES", () => {
           { Florida: 'Everglades' }
         ])
     }),
-    it.only("getParkActivities", () => {
+    it("getParkActivities", () => {
       const e = nationalParksPrompts.getParkActivities();
 
       expect(e).to.deep.equal(
@@ -375,7 +375,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Brewery Prompts", () => {
-    it("getBeerCount", () => {
+    it.only("getBeerCount", () => {
       const e = breweryPrompts.getBeerCount();
 
       expect(e).to.deep.equal(40)
