@@ -695,7 +695,17 @@ const nationalParksPrompts = {
     //   'backpacking',
     //   'rock climbing' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const activities = []
+
+    nationalParks.forEach(park => {
+      park.activities.forEach(activity => {
+        if (!activities.includes(activity)) {
+          activities.push(activity)
+        }
+      })
+    })
+
+    const result = activities;
     return result;
 
     // Annotation:
