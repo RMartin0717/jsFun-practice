@@ -741,7 +741,13 @@ const breweryPrompts = {
     // Return the total beer count of all beers for every brewery e.g.
     // 40
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    beerCount = 0
+
+    breweries.forEach(brewery => {
+      beerCount = beerCount + brewery.beers.length
+    })
+
+    const result = beerCount;
     return result;
 
     // Annotation:
@@ -749,7 +755,7 @@ const breweryPrompts = {
 
     //i am starting with an array of brewery objects which have nested arrays of beer objects
       //i need to add the lengths of each beer array
-      //iterate over each brewery and add the beer array length to a count 
+      //iterate over each brewery and add the beer array length to a count
     //i need to return the total beer count of all bears for every brewery
   },
 
