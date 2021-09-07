@@ -662,6 +662,14 @@ const nationalParksPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of park objects with nested activities arrays
+      //map over nationalParks and for each iteration
+        //store state name in variable
+        //store park name in variable
+        //return an object
+      //return the array of objects
+    //i need to return an array of objects where the key is the state and the value is its national park
   },
 
   getParkActivities() {
