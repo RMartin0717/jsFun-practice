@@ -967,12 +967,8 @@ const turingPrompts = {
     const topicInstructors = cohorts.reduce((acc, cohort) => {
       cohort.curriculum.forEach(topic => {
         if (!acc[topic]) {
-          const getInstructors = instructors.filter(instructor => {
-            return instructor.teaches.includes(topic)
-          })
-          const instructorNames = getInstructors.map(instructor => {
-            return instructor.name
-          })
+          const getInstructors = instructors.filter(instructor => instructor.teaches.includes(topic))
+          const instructorNames = getInstructors.map(instructor => instructor.name)
           acc[topic] = instructorNames
         }
       })
