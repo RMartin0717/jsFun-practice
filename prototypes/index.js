@@ -794,6 +794,13 @@ const breweryPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an array of brewery objects which have nested arrays of beer objects
+      //create variable for hightestABV and assign to an object with a key abv assigned to 0
+      //forEach brewery
+        //forEach beer
+          //if beer.abv > current highestABV, reassign hightestABV
+    //i need to return the beer which has the highest ABV of all beers
   }
 };
 

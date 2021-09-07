@@ -381,7 +381,7 @@ describe("PROTOTYPES", () => {
       expect(e).to.deep.equal(40)
     });
 
-    it.only("getBreweryBeerCount", () => {
+    it("getBreweryBeerCount", () => {
       const e = breweryPrompts.getBreweryBeerCount();
 
       expect(e).to.deep.equal([{
@@ -402,7 +402,7 @@ describe("PROTOTYPES", () => {
       }])
     });
 
-    it("findHighestAbvBeer", () => {
+    it.only("findHighestAbvBeer", () => {
       const e = breweryPrompts.findHighestAbvBeer();
 
       expect(e).to.deep.equal({
