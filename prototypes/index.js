@@ -1016,6 +1016,11 @@ const bossPrompts = {
     //   { bossName: 'Scar', sidekickLoyalty: 16 }
     // ]
 
+    const bossNames = Object.values(bosses).map(boss => {
+      return boss.name
+    })
+    console.log(bossNames)
+
     const result = 'REPLACE WITH YOUR RESULT HERE';
     return result;
 
