@@ -981,6 +981,7 @@ const turingPrompts = {
     // Annotation:
     // Write your annotation here as a comment
 
+    //strayed away from pseudocode again--be mindful next time
     //i am starting with an array of instructor objects AND an array of cohort objects
       //use reduce to create an object
       //iterate over cohorts and for each cohort.curriculum, if that topic is not a key, make it one and assign it to an empty array
@@ -1020,6 +1021,13 @@ const bossPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an OBJECT of bosses in which each boss key is assigned to an object AND an ARRAY of sidekick objects
+      //object.keys on bosses to get an array of bosses
+      //map over array of bosses and on each iteration
+        //iterate over sidekicks with reduce to get sum of loyaltyToBos
+        //return object containing bossName and sidekickLoyalty data
+    //I need to return an ARRAY of objects that each have the boss's name and the sum loyalty of their sidekicks
   }
 };
 

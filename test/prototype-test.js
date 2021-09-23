@@ -475,7 +475,7 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it.only("curriculumPerTeacher", () => {
+    it("curriculumPerTeacher", () => {
       const e = turingPrompts.curriculumPerTeacher();
 
       expect(e).to.deep.equal({
@@ -495,7 +495,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Boss Prompts", () => {
-    it("bossLoyalty", () => {
+    it.only("bossLoyalty", () => {
       const e = bossPrompts.bossLoyalty();
 
       expect(e).to.deep.equal([{
