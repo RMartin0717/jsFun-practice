@@ -10,7 +10,7 @@ Prototype Prompt Sets in Order
 - [x] National Park Prompts
 - [x] Brewery Prompts
 - [x] Turing Prompts
-- [ ] Boss Prompts
+- [x] Boss Prompts
 - [ ] Ultima Prompts
 - [ ] Dinosaur Prompts
 
