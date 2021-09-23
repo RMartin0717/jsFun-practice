@@ -1019,9 +1019,17 @@ const bossPrompts = {
     const bossNames = Object.values(bosses).map(boss => {
       return boss.name
     })
-    console.log(bossNames)
+    const bossTotalLoyalty = bossNames.map(boss => {
+      const totalLoyalty = sidekicks.reduce((acc, sidekick) => {
+        if(sidekick.boss === boss) {
+          acc += sidekick.loyaltyToBoss
+        }
+        return acc
+      }, 0)
+      return { bossName: boss, sidekickLoyalty: totalLoyalty }
+    })
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = bossTotalLoyalty;
     return result;
 
     // Annotation:
