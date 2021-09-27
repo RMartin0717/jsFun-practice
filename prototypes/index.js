@@ -1080,12 +1080,20 @@ const astronomyPrompts = {
 
     const allConstellations = Object.values(constellations)
 
-    const allStars = allConstellations.reduce((acc, constellation) => {
+    const constellationStars = allConstellations.reduce((acc, constellation) => {
       return [...acc, ...constellation.stars]
     }, [])
-    console.log(allStars)
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let constellationStarsData = []
+
+    stars.forEach(star => {
+      if (constellationStars.includes(star.name)) {
+        constellationStarsData.push(star)
+      }
+    })
+
+
+    const result = constellationStarsData;
     return result;
 
     // Annotation:
