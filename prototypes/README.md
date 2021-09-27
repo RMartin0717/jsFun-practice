@@ -11,6 +11,7 @@ Prototype Prompt Sets in Order
 - [x] Brewery Prompts
 - [x] Turing Prompts
 - [x] Boss Prompts
+- [ ] Astronomy Prompts
 - [ ] Ultima Prompts
 - [ ] Dinosaur Prompts
 

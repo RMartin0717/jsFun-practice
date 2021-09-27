@@ -1083,6 +1083,11 @@ const astronomyPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an OBJECT containing keys for constellations which are assigned to OBJECTS containing constellation information AND an ARRAY of star objects
+      //create an array containing all of the stars in each constellation stars array
+      //iterate over stars array and for each star.name, if it is in the master array of stars that are in constellations, add the whole star object to an array to return at the end of the function 
+    //I need to return an ARRAY of all of the stars that appear in any of the constellations
   },
 
   starsByColor() {
