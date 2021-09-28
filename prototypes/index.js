@@ -1092,7 +1092,6 @@ const astronomyPrompts = {
       }
     })
 
-
     const result = constellationStarsData;
     return result;
 
@@ -1116,11 +1115,26 @@ const astronomyPrompts = {
     //   red: [{obj}]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const starColors = stars.reduce((acc, star) => {
+      if (!acc[star.color]) {
+        acc[star.color] = []
+      }
+      acc[star.color] = [...acc[star.color], star]
+      return acc
+    }, {})
+
+    const result = starColors;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an OBJECT containing keys for constellations which are assigned to OBJECTS containing constellation information AND an ARRAY of star objects
+      //may use reduce to create an object
+      //iterate over stars array to create keys (if it does not already exist) for star.color assigned to empty arrays
+      //then add the star object to the array assigned to the color
+    //I need to return an OBJECT with the keys of the different colors of the stars whose values are arrays containing star objects that match
+
   },
 
   constellationsStarsExistIn() {
