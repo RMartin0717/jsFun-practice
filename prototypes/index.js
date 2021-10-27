@@ -1143,20 +1143,33 @@ const astronomyPrompts = {
     //  [ "Canis Major",
     //    "Carina",
     //    "Boötes",
+    //    "Lyra",
     //    "Auriga",
     //    "Orion",
-    //    "Lyra",
     //    "Canis Minor",
     //    "The Plow",
     //    "Orion",
     //    "The Little Dipper" ]
 
+    let brightestConstellations = []
+    stars.forEach(star => {
+      if(star.constellation.length) {
+        brightestConstellations = [...brightestConstellations, star.constellation]
+      }
+    })
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = brightestConstellations;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //i am starting with an ARRAY of star objects and a constellation OBJECT in which each key is assigned to an object
+      //order stars from high to low by star.visualMagnitude
+      //iterate over stars
+        //
+
+    //I need to return an array of the names of the constellations (star.constellation)
   }
 };
 

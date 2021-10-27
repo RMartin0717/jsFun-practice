@@ -529,7 +529,7 @@ describe("PROTOTYPES", () => {
       }])
     });
 
-    it.only("starsByColor", () => {
+    it("starsByColor", () => {
       const e = astronomyPrompts.starsByColor();
 
       expect(e).to.deep.equal({
@@ -607,10 +607,10 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it("constellationsStarsExistIn", () => {
+    it.only("constellationsStarsExistIn", () => {
       const e = astronomyPrompts.constellationsStarsExistIn();
 
-      expect(e).to.deep.equal(["Canis Major", "Carina", "Boötes", "Auriga", "Orion", "Lyra", "Canis Minor", "The Plow", "Orion", "The Little Dipper"])
+      expect(e).to.deep.equal(["Canis Major", "Carina", "Boötes", "Lyra", "Auriga", "Orion", "Canis Minor", "The Plow", "Orion", "The Little Dipper"])
     })
   });
 
