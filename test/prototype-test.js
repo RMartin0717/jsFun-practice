@@ -607,7 +607,7 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it.only("constellationsStarsExistIn", () => {
+    it("constellationsStarsExistIn", () => {
       const e = astronomyPrompts.constellationsStarsExistIn();
 
       expect(e).to.deep.equal(["Canis Major", "Carina", "Boötes", "Lyra", "Auriga", "Orion", "Canis Minor", "The Plow", "Orion", "The Little Dipper"])
@@ -615,7 +615,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Ultima Prompts", () => {
-    it("totalDamage", () => {
+    it.only("totalDamage", () => {
       const e = ultimaPrompts.totalDamage();
 
       expect(e).to.deep.equal(113)
