@@ -1194,17 +1194,23 @@ const ultimaPrompts = {
     // Return the sum of the amount of damage for all the weapons that our characters can use
     // Answer => 113
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const sumDamage = characters.reduce((acc,character) => {
+      const charDamage = character.weapons.reduce((acc, weapon) => {
+        return acc + weapons[weapon].damage
+      }, 0)
+      return acc + charDamage
+    }, 0)
+
+    const result = sumDamage;
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
 
     //I am starting with an array of character objects AND a weapons object with keys for weapons assigned to objects containing info for damage and range as values
-      //want to iterate over weapons object keys, which means I need to create an array of weapon names (Object.key?)
-      //iterate over weapons with a reduce and start acc at 0
-        //for each iteration, access weapons object at weapons[currentWeapon].damage and add to acc
-        //return acc
+      //want to iterate over each character with reduce
+        //for each character, i need to iterate over character.weapons and add weapons.currentWeapon to the acc
+      //return acc
     //I need to return the sum of hte amount of DAMAGE for all of the weapons
   },
 
