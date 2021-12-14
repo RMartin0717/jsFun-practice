@@ -1199,6 +1199,13 @@ const ultimaPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+
+    //I am starting with an array of character objects AND a weapons object with keys for weapons assigned to objects containing info for damage and range as values
+      //want to iterate over weapons object keys, which means I need to create an array of weapon names (Object.key?)
+      //iterate over weapons with a reduce and start acc at 0
+        //for each iteration, access weapons object at weapons[currentWeapon].damage and add to acc
+        //return acc
+    //I need to return the sum of hte amount of DAMAGE for all of the weapons
   },
 
   charactersByTotal() {

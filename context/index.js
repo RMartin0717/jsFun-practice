@@ -21,6 +21,11 @@ const context = {
 
     // Annotation:
     // Write your annotation here as a comment
+    // `this` will reference the global window object because _______
+    // With ES6 functions, the value of `this` is set
+    // upon declartion rather than upon invocation.
+    // If this had been written as a traditional ES5 function,
+    // `this` would instead point to _______
   },
 
   exerciseB() {
