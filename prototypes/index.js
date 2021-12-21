@@ -1224,6 +1224,14 @@ const ultimaPrompts = {
 
     // Annotation:
     // Write your annotation here as a comment
+    //i am starting with an array of character objects and a weapons object
+      //iterate over characters array
+        //for each character, iterate over weapons
+          //iterate over weapons array (reduce)
+            //for each weapon, get the damage and range and add to acc
+          //return object with total damage and range
+        //return object with character name and weapon object
+    //i need to return the total damage and total range for each character as an OBJECT
   },
 };
 
