@@ -12,7 +12,7 @@ Prototype Prompt Sets in Order
 - [x] Turing Prompts
 - [x] Boss Prompts
 - [x] Astronomy Prompts
-- [ ] Ultima Prompts
+- [x] Ultima Prompts
 - [ ] Dinosaur Prompts
 
 Understanding how to use prototype methods is an important step in learning how to work with application data. As you build more complex applications, you'll find yourself working with very large datasets. These datasets might need to be massaged into new formats or connect to other sources of data. Prototype methods will give you the tools to accomplish these tasks.
