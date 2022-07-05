@@ -25,7 +25,7 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 const kittyPrompts = {
   orangeKittyNames() {
 
-    const orangeKitties = kitties.filter(kitty => kitty.color === 'orange').map(kitty => kitty.name)
+    const orangeKitties = kitties.filter(kitty => kitty.color === 'orange').map(kitty => kitty.name);
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
@@ -43,7 +43,7 @@ const kittyPrompts = {
 
   sortByAge() {
     // Sort the kitties by their age
-    const sortByAge = kitties.sort((a, b) => b.age - a.age)
+    const sortByAge = kitties.sort((a, b) => b.age - a.age);
     const result = sortByAge;
     return result;
 
@@ -56,12 +56,12 @@ const kittyPrompts = {
   },
 
   growUp() {
-    const sortedKitties = kitties.sort((a,b) => b.age - a.age)
+    const sortedKitties = kitties.sort((a,b) => b.age - a.age);
 
     const olderKitties = sortedKitties.map(kitty => {
       const {age} = kitty
-      const newAge = age + 2
-      return {...kitty, age: newAge}
+      kitty.age = age + 2
+      return kitty
     })
     // Return an array of kitties who have all grown up by 2 years e.g.
     // [{
@@ -472,7 +472,7 @@ const bookPrompts = {
 
     let friendlyBooks = []
     books.forEach(book => {
-      if (!book.genre.includes("Horror") && !book.genre.includes("True Crime")) {
+      if (!book.genre.includes('Horror') && !book.genre.includes('True Crime')) {
         friendlyBooks = [...friendlyBooks, book.title]
       }
     })
@@ -1272,11 +1272,29 @@ const dinosaurPrompts = {
     //   'Jurassic World: Fallen Kingdom': 18
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let awesomeDinoCount = {}
+    movies.forEach(movie => {
+      let numAwesomeDinos = 0
+      movie.dinos.forEach(dino => {
+        if(dinosaurs[dino].isAwesome) {
+          numAwesomeDinos++
+        }
+      })
+      awesomeDinoCount[movie.title] = numAwesomeDinos
+    })
+
+    const result = awesomeDinoCount;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    //I am starting with a dinosaurs object in which each key represents a dinosaur with the value of an object with keys for carnivore, herbivore, isAwesome, each of which has a boolean value
+    //I am starting with a humans object in which each key represents a jurassic park character, assigned to an object containing the keys, yearBorn, nationality, and imdbStarMeterRating
+    //I am starting with a movies array of objects containing keys for title, director, leadingActor, cast, dinos, yearReleased, hasOscar, and millionsGrossed
+      //create an object
+      //iterate over movies
+        //for each movie in the array, create keys for each movie title for the new object
+        //for each movie, create a counter. iterate over currentMovie.dinos and add to counter if dinosaurs[currentMovie.dinos].isAwesome is true
+    //I need to return an OBJECT which has keys for each movie title assigned to values representing the number of awesome dinorsaurs in that movie
   },
 
   averageAgePerMovie() {

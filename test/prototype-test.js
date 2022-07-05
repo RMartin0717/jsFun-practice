@@ -621,7 +621,7 @@ describe("PROTOTYPES", () => {
       expect(e).to.deep.equal(113)
     });
 
-    it.only("charactersByTotal", () => {
+    it("charactersByTotal", () => {
       const e = ultimaPrompts.charactersByTotal();
 
       expect(e).to.deep.equal([{
@@ -649,7 +649,7 @@ describe("PROTOTYPES", () => {
   });
 
   describe("Dinosaur Prompts", () => {
-    it("countAwesomeDinosaurs", () => {
+    it.only("countAwesomeDinosaurs", () => {
       const e = dinosaurPrompts.countAwesomeDinosaurs();
 
       expect(e).to.deep.equal({
