@@ -1425,6 +1425,7 @@ const dinosaurPrompts = {
       { name: 'Bryce Dallas Howard', ages: [ 34, 37 ] } ]
     */
 
+    //get actor names with ages
     const actorAges = movies.reduce((acc,movie) => {
       movie.cast.forEach(castMember => {
         if(!acc[castMember]) {
@@ -1436,6 +1437,7 @@ const dinosaurPrompts = {
       return acc
     }, {})
 
+    //format data
     const actorNames = Object.keys(actorAges)
     const formatedActorAges = actorNames.map(name => {
       return { name: name, ages: actorAges[name] }
@@ -1450,7 +1452,7 @@ const dinosaurPrompts = {
         //for each movie, if the cast member is not a key, create it and assign it to an empty array
         //calculate age of actor at movie release time and add to key value array
       //create array of actor names based on the returned object
-      //iterate over actor names to return objects with actor names and ages 
+      //iterate over actor names to return objects with actor names and ages
     //I need to return an ARRAY of OBJECTS for each human and the ages they were in the movies they were cast in as an array of ages
   }
 };
