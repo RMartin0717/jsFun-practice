@@ -1323,11 +1323,35 @@ const dinosaurPrompts = {
       }
     */
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    let aveAgeOfCast = {}
+
+    movies.forEach(movie => {
+      if(!aveAgeOfCast[movie.director]) {
+        aveAgeOfCast[movie.director] = {}
+      }
+
+      let totalAge = movie.cast.reduce((total, castMember) => {
+        const currentAge = movie.yearReleased - humans[castMember].yearBorn
+        return total + currentAge
+      }, 0)
+
+      const aveAge = Math.floor(totalAge / movie.cast.length)
+      aveAgeOfCast[movie.director][movie.title] = aveAge
+    })
+
+    const result = aveAgeOfCast;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // I am starting with (see above)
+      //create an object
+      //iterate over movies array
+        //for each movie, if the director is not already a key, create that key and assign it to an empty object
+        //calculate average age of cast
+          //iterate over cast for current movie and for each cast member, get their age from the humans object and add to counter
+          //use counter and length of cast array to calculate average age
+        //assign the movie title as a key for the director object and assign it to the calculated average age
+    //I need to return an OBJECT with a key for each director assigned to an object with keys for each movie they directed assigned to the average age of the cast for that movie
   },
 
   uncastActors() {
@@ -1356,11 +1380,33 @@ const dinosaurPrompts = {
       }]
     */
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const humanNames = Object.keys(humans)
+    let castMembers = []
+    movies.forEach(movie => {
+      movie.cast.forEach(castMember => {
+        if(!castMembers.includes(castMember)) {
+          castMembers = [...castMembers, castMember]
+        }
+      })
+    })
+
+    const notCastNames = humanNames.filter(human => !castMembers.includes(human))
+    const notCastUnsorted = notCastNames.map(name => {
+      const {nationality, imdbStarMeterRating} = humans[name]
+      return { name: name, nationality: nationality, imdbStarMeterRating: imdbStarMeterRating }
+    })
+    const notCast = notCastUnsorted.sort((a,b) => a.nationality.localeCompare(b.nationality))
+
+    const result = notCast;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // I am starting with (see above)
+      //Create an array of the keys for the humans object
+      //create an array containing all names of all jurassic park movie cast members
+      //iterate over human names array and if the cast members array does NOT include that name, add the humans object to the array of humans not in jurassic park movies
+      //sort humans not in jurassic park movies array alphabetically by nationality (dot notation to access nationality of human)
+    //I need to return an ARRAY of OBJECTS containing info about each person who is NOT in a jurassic park movie and sort the objects alphabetically by nationality
   },
 
   actorsAgesInMovies() {
@@ -1379,11 +1425,33 @@ const dinosaurPrompts = {
       { name: 'Bryce Dallas Howard', ages: [ 34, 37 ] } ]
     */
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const actorAges = movies.reduce((acc,movie) => {
+      movie.cast.forEach(castMember => {
+        if(!acc[castMember]) {
+          acc = { ...acc, [castMember]: [] }
+        }
+        const getAge = movie.yearReleased - humans[castMember].yearBorn
+        acc[castMember] = [...acc[castMember], getAge]
+      })
+      return acc
+    }, {})
+
+    const actorNames = Object.keys(actorAges)
+    const formatedActorAges = actorNames.map(name => {
+      return { name: name, ages: actorAges[name] }
+    })
+
+    const result = formatedActorAges;
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    //I am starting with (see above)
+      //iterate over movies to return an object of cast members assigned to arrays of their ages at times of movie releases
+        //for each movie, if the cast member is not a key, create it and assign it to an empty array
+        //calculate age of actor at movie release time and add to key value array
+      //create array of actor names based on the returned object
+      //iterate over actor names to return objects with actor names and ages 
+    //I need to return an ARRAY of OBJECTS for each human and the ages they were in the movies they were cast in as an array of ages
   }
 };
 
