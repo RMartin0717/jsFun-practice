@@ -95,7 +95,7 @@ const context = {
     // breed is assigned to dog.getBreed() which contains
     // the ES5 anonymous function containing the ES5 function, innerFuction
     // and because breed is called on the global window object,
-    // and the value of "this"  is set upon invocation,
+    // and the value of "this" is set upon invocation,
     // the value of "this" will be on the global window object
     // where the invocation of the ES5 functions happens
   },
@@ -200,11 +200,12 @@ const context = {
 
     // Annotation:
     // Write your annotation here as a comment
-    // Because obj.method() invokes the method that assigns obj.arrowFunction to an arrow function
-    // and the value of 'this' is set upon declaration for
-    // ES6 arrow functions and arrow functions use 'this' from
-    // the code containing the function,
-    // the value of 'this' is obj
+    // When .method() is called on obj, the ES5 function
+    // contained in .method results in 'this' being given
+    // the value of obj since method() was called on obj.
+    // Then, when we call obj.arrowFunction() which has been
+    // assigned to an arrow function which returns this,
+    // obj is what we get back
   },
 
   exerciseI() {
