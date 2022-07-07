@@ -59,7 +59,7 @@ describe("CONTEXT", () => {
     expect(e).withMessage("Your result is not the correct context").to.be.true
   });
 
-  it.only("exerciseI", () => {
+  it("exerciseI", () => {
     const e = "poets" == context.exerciseI();
     expect(e).withMessage("Your result is not the correct context").to.be.true
   });

@@ -223,11 +223,14 @@ const context = {
     }, poets);
 
     // What is the value of `this` that gets returned on each iteration of poets.map()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'poets';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment. Annotation should include explanation regarding the second argument of `poets` that is being passed
+    // The optional second argument of 'poets' is the value
+    // to use as 'this' when executing a callback function
+    // (map calls a provided callbackFn function once for each element in an array)
   },
 
   exerciseJ() {
@@ -237,11 +240,15 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'el';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment.
+    // The value of 'this' is el because the callback function
+    // is being called on the variable el
+    // (it's an ES5 function, so value of 'this'
+    // is set upon invocation)
   },
 
   exerciseK() {
@@ -253,11 +260,13 @@ const context = {
     };
 
     // What is the value of `this` when we call store.sellMe()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'store';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment.
+    // The value of 'this' will be store because
+    // the ES5 function sellMe() is being called on store
   },
 
   exerciseL() {
@@ -273,11 +282,14 @@ const context = {
     };
 
     // What is the value of `this` when we call dog.getBreed()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'dog';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // _this points to the outer this, so when dog.getBreed()
+    // is called, this is pointing to the code containing the function,
+    // which is the dog object
   },
 
   exerciseM() {
@@ -296,11 +308,14 @@ const context = {
     }
 
     // What is the value of `this` when we call makeBirdNoise.call(robert);
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'robert';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // The call() method calls a function with a given this
+    // value and arguments provided individually, so since robert
+    // is provided as the argument, the value of 'this' is robert
   },
 
   exerciseN() {
@@ -322,11 +337,15 @@ const context = {
     var firstBird = new Bird('Calvin', 'budgie');
 
     // What is the value of `this` when we call firstBird.delayNoise();
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'instance of Bird';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // When .bind(this) is strung onto this.makeNoise in the
+    // delayNoise function, 'this' is Bird class
+    // So the value of 'this' when we call firstBird.delayNoise()
+    // is an instance (firstBird) of Bird
   },
 
   exerciseO() {
@@ -338,11 +357,14 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our button element and the callback is triggered?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // Since an arrow function uses 'this' from the code that
+    // contains the function, it is bound to the parent scope,
+    // the global window object, not the button
   },
 
   exerciseP() {
@@ -353,12 +375,15 @@ const context = {
       }
     };
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // What is the value of `this` when we call child.scream();
     // Annotation:
     // Write your annotation here as a comment
+    // Since an arrow function uses 'this' from the code that
+    // contains the function, it is bound to the parent scope,
+    // the global window object, not the child object
   }
 };
 
