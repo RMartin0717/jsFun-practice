@@ -19,7 +19,7 @@ chai.use(function(e, t) {
 });
 
 describe("CONTEXT", () => {
-  it.only("exerciseA", () => {
+  it("exerciseA", () => {
     const e = "global window object" == context.exerciseA();
     expect(e).withMessage("Your result is not the correct context").to.be.true
   });
@@ -59,7 +59,7 @@ describe("CONTEXT", () => {
     expect(e).withMessage("Your result is not the correct context").to.be.true
   });
 
-  it("exerciseI", () => {
+  it.only("exerciseI", () => {
     const e = "poets" == context.exerciseI();
     expect(e).withMessage("Your result is not the correct context").to.be.true
   });

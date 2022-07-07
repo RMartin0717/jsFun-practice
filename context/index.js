@@ -21,11 +21,12 @@ const context = {
 
     // Annotation:
     // Write your annotation here as a comment
-    // `this` will reference the global window object because _______
+    // `this` will reference the global window object because
+    // [the ES6 function, fly, is declared on the global window object.]
     // With ES6 functions, the value of `this` is set
     // upon declartion rather than upon invocation.
     // If this had been written as a traditional ES5 function,
-    // `this` would instead point to _______
+    // `this` would instead point to [the ship instance of SpaceProbe object]
   },
 
   exerciseB() {
@@ -35,11 +36,16 @@ const context = {
     }
 
     // What is the value of `this` when we call fn()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // `this` will reference the global window object because
+    // fn is a function that exists in the global window object
+    // not in an object literal or class
+    // so when we call it from the global window object,
+    // this points to the global window object
   },
 
   exerciseC() {
@@ -54,11 +60,14 @@ const context = {
     el.addEventListener('click', car.getInfo);
 
     // What is the value of `this` when a user clicks on our element and car.getInfo() is triggered?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'el';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // Because ES5 functions set the value of this upon invocation
+    // the "this" will be bound to el, specifically when it is clicked on
+    // and car.getInfo is called
   },
 
   exerciseD() {
@@ -77,11 +86,18 @@ const context = {
     var breed = dog.getBreed();
 
     // What is the value of `this` when we call breed()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // "this" will be bound to the global window object because
+    // breed is assigned to dog.getBreed() which contains
+    // the ES5 anonymous function containing the ES5 function, innerFuction
+    // and because breed is called on the global window object,
+    // and the value of "this"  is set upon invocation,
+    // the value of "this" will be on the global window object
+    // where the invocation of the ES5 functions happens
   },
 
   exerciseE() {
@@ -93,11 +109,15 @@ const context = {
 
 
     // What is the value of `this` when we call fn()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // The value of 'this' will be the global window object because
+    // fn() is an ES6 function, meaning the value of 'this' will be
+    // set upon declaration and the value of 'this' will be inherited
+    // from the code that contains the function
   },
 
   exerciseF() {
@@ -116,11 +136,15 @@ const context = {
     const storm = new Hero('Ororo', 'weather control', true);
 
     // What is the value of `this` when we call storm.identifyHero()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'instance of Hero';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // The value of 'this' will be an instance of the Hero class because
+    // storm.identifyHero() is an ES5 function, so 'this' is bound
+    // upon invocation of the function, which happens on an instance
+    // of Hero
   },
 
   exerciseG() {
@@ -144,11 +168,18 @@ const context = {
 
 
     // What is the value of `this` when we call monopoly.restart()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'global window object';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // With ES6 arrow functions, 'this' is lexically bound
+    // (uses 'this' from the code that contains the arrow function)
+    // In ES5 functions, 'this' is bound to different values based on
+    // context in which it is called
+    // for a setTimeout function, a .bind(this) would be needed
+    // in order to help pass the context into the function.
+    // Without this context, 'this' binds to the parent scope
   },
 
   exerciseH() {
@@ -164,11 +195,16 @@ const context = {
     obj.method();
 
     // What is the value of `this` when we call obj.arrowFunction()?
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = 'obj';
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
+    // Because obj.method() invokes the method that assigns obj.arrowFunction to an arrow function
+    // and the value of 'this' is set upon declaration for
+    // ES6 arrow functions and arrow functions use 'this' from
+    // the code containing the function,
+    // the value of 'this' is obj
   },
 
   exerciseI() {
