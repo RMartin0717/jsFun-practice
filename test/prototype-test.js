@@ -681,7 +681,7 @@ describe("PROTOTYPES", () => {
       })
     });
 
-    it("uncastActors", () => {
+    it.only("uncastActors", () => {
       const e = dinosaurPrompts.uncastActors();
 
       expect(e).to.deep.equal([{

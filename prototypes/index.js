@@ -25,11 +25,13 @@ const { dinosaurs, humans, movies } = require('./datasets/dinosaurs');
 const kittyPrompts = {
   orangeKittyNames() {
 
-    const orangeKitties = kitties.filter(kitty => kitty.color === 'orange').map(kitty => kitty.name);
+    const orangeKitties = kitties.filter(kitty => kitty.color === 'orange')
+
+    const orangeKittyNames = orangeKitties.map(kitty => kitty.name);
 
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
-    const result = orangeKitties;
+    const result = orangeKittyNames;
     return result;
 
     // Annotation:
@@ -1380,34 +1382,95 @@ const dinosaurPrompts = {
       }]
     */
 
-    const humanNames = Object.keys(humans)
-    let castMembers = []
+    let allHumans = Object.keys(humans)
+    let allActors = {}
+
     movies.forEach(movie => {
-      movie.cast.forEach(castMember => {
-        if(!castMembers.includes(castMember)) {
-          castMembers = [...castMembers, castMember]
+      movie.cast.forEach(member => {
+        if(!allActors[member]) {
+          allActors[member] = true
         }
       })
     })
 
-    const notCastNames = humanNames.filter(human => !castMembers.includes(human))
-    const notCastUnsorted = notCastNames.map(name => {
-      const {nationality, imdbStarMeterRating} = humans[name]
-      return { name: name, nationality: nationality, imdbStarMeterRating: imdbStarMeterRating }
+    const uncastList = allHumans.filter(human => {
+      return !allActors[human]
     })
-    const notCast = notCastUnsorted.sort((a,b) => a.nationality.localeCompare(b.nationality))
 
-    const result = notCast;
-    return result;
+    const uncastData = uncastList.map(human => {
+      const { nationality, imdbStarMeterRating } = humans[human]
+      return { name: human, nationality: nationality, imdbStarMeterRating: imdbStarMeterRating }
+    })
+
+    const sortedUncastData = uncastData.sort((a,b) => a.nationality.localeCompare(b.nationality))
+
+    return sortedUncastData
 
     // Annotation:
-    // I am starting with (see above)
-      //Create an array of the keys for the humans object
-      //create an array containing all names of all jurassic park movie cast members
-      //iterate over human names array and if the cast members array does NOT include that name, add the humans object to the array of humans not in jurassic park movies
-      //sort humans not in jurassic park movies array alphabetically by nationality (dot notation to access nationality of human)
-    //I need to return an ARRAY of OBJECTS containing info about each person who is NOT in a jurassic park movie and sort the objects alphabetically by nationality
+    // I am starting with humans OBJECT with keys of names assigned to OBJECTS containing data about the human. I also have an ARRAY of movie OBJECTS with cast keys assigned to ARRAYS containing names of actor
+      // get keys from humans array
+      // make an object containing all cast members from all movies
+      // iterate over names of humans and
+        // check if their key exists in object
+        // if not, create OBJECT with their info (dot notation into humans object) to add to array
+    // I need to return an ARRAY of OBJECTS that contain names of humans who have not been cast in a jurassic park movie, their nationality, their imdbStarMeterRating, sorted alphabetically by nationality
+
   },
+
+  // uncastActors() {
+  //   /*
+  //   Return an array of objects that contain the names of humans who have not been cast in a Jurassic Park movie (yet), their nationality, and their imdbStarMeterRating. The object in the array should be sorted alphabetically by nationality.
+  //
+  //   e.g.
+  //     [{
+  //       name: 'Justin Duncan',
+  //       nationality: 'Alien',
+  //       imdbStarMeterRating: 0
+  //     },
+  //     {
+  //       name: 'Karin Ohman',
+  //       nationality: 'Chinese',
+  //       imdbStarMeterRating: 0
+  //     },
+  //     {
+  //       name: 'Tom Wilhoit',
+  //       nationality: 'Kiwi',
+  //       imdbStarMeterRating: 1
+  //     }, {
+  //       name: 'Jeo D',
+  //       nationality: 'Martian',
+  //       imdbStarMeterRating: 0
+  //     }]
+  //   */
+  //
+  //   const humanNames = Object.keys(humans)
+  //   let castMembers = []
+  //   movies.forEach(movie => {
+  //     movie.cast.forEach(castMember => {
+  //       if(!castMembers.includes(castMember)) {
+  //         castMembers = [...castMembers, castMember]
+  //       }
+  //     })
+  //   })
+  //
+  //   const notCastNames = humanNames.filter(human => !castMembers.includes(human))
+  //   const notCastUnsorted = notCastNames.map(name => {
+  //     const {nationality, imdbStarMeterRating} = humans[name]
+  //     return { name: name, nationality: nationality, imdbStarMeterRating: imdbStarMeterRating }
+  //   })
+  //   const notCast = notCastUnsorted.sort((a,b) => a.nationality.localeCompare(b.nationality))
+  //
+  //   const result = notCast;
+  //   return result;
+  //
+  //   // Annotation:
+  //   // I am starting with (see above)
+  //     //Create an array of the keys for the humans object
+  //     //create an array containing all names of all jurassic park movie cast members
+  //     //iterate over human names array and if the cast members array does NOT include that name, add the humans object to the array of humans not in jurassic park movies
+  //     //sort humans not in jurassic park movies array alphabetically by nationality (dot notation to access nationality of human)
+  //   //I need to return an ARRAY of OBJECTS containing info about each person who is NOT in a jurassic park movie and sort the objects alphabetically by nationality
+  // },
 
   actorsAgesInMovies() {
     /*
